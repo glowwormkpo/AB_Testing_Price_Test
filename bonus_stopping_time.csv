@@ -1,0 +1,2 @@
+alpha,power,raw_control_conversion,target_conversion,required_sample_per_group,avg_users_per_week,min_test_traffic_percent_for_two_weeks,recommended_min_runtime_weeks
+0.05,0.8,0.019903614220108817,0.013156626348885488,5548,24356.363636363636,11,2

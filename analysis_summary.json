@@ -1,0 +1,77 @@
+{
+  "raw_test_rows": 316800,
+  "raw_user_rows": 275616,
+  "removed_invalid_assignment_price_rows": 365,
+  "flagged_invalid_timestamp_rows": 5180,
+  "clean_rows": 316435,
+  "unmatched_geo_rows_clean": 41141,
+  "control_n": 202517,
+  "test_n": 113918,
+  "control_conversions": 4030,
+  "test_conversions": 1772,
+  "conversion": {
+    "control_rate": 0.019899563987220825,
+    "test_rate": 0.01555504836812444,
+    "diff": -0.004344515619096384,
+    "relative_diff": -0.21832215127358373,
+    "z": -8.74375299250435,
+    "p_value": 0.0,
+    "ci_low": -0.0052859847983384705,
+    "ci_high": -0.003403046439854297
+  },
+  "conversion_t_test": {
+    "t": -9.044608417898376,
+    "p_value": 0.0
+  },
+  "revenue": {
+    "control_mean": 0.7760829955016122,
+    "test_mean": 0.917747853719342,
+    "diff": 0.14166485821772978,
+    "relative_diff": 0.1825382839707322,
+    "t": 5.715224666463108,
+    "p_value": 1.0955917950639105e-08,
+    "ci_low": 0.09308179485434613,
+    "ci_high": 0.19024792158111342,
+    "df": 186141.738219264
+  },
+  "post_stratified_source_device_os_geo": {
+    "strata": 154,
+    "columns": [
+      "source",
+      "device",
+      "operative_system",
+      "geo_matched"
+    ],
+    "control_conversion": 0.019901713846542532,
+    "test_conversion": 0.015649169954525706,
+    "conversion_lift": -0.004252543892016826,
+    "control_revenue_per_user": 0.7761668400151587,
+    "test_revenue_per_user": 0.9233010273170166,
+    "revenue_lift": 0.1471341873018579
+  },
+  "linux_sensitivity": {
+    "linux_share": 0.01305165357814401,
+    "rows_after_removing_linux": 312305,
+    "control_n": 200313,
+    "test_n": 111992,
+    "control_conversion": 0.019948780159051084,
+    "test_conversion": 0.01582255875419673,
+    "control_revenue_per_user": 0.7780024262029923,
+    "test_revenue_per_user": 0.9335309664976069,
+    "revenue_lift": 0.1555285402946146,
+    "t_statistic": 6.184240028400434,
+    "p_value": 6.240234995402716e-10
+  },
+  "bonus_stopping_time": {
+    "alpha": 0.05,
+    "power": 0.8,
+    "raw_control_conversion": 0.019903614220108817,
+    "target_conversion": 0.013156626348885488,
+    "required_sample_per_group": 5548,
+    "avg_users_per_week": 24356.363636363636,
+    "min_test_traffic_percent_for_two_weeks": 11,
+    "recommended_min_runtime_weeks": 2
+  },
+  "date_min": "2015-03-02",
+  "date_max": "2015-05-31"
+}
