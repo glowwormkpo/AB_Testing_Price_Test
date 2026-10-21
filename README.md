@@ -37,5 +37,5 @@ An end-to-end analysis of a pricing experiment across **316,800 user sessions** 
 | `*_segments.csv`, `*_distribution_gaps.csv` | Segment results by source, device, OS, city and week |
 | `cleaned_pricing_ab_data_sample_1000.csv` | 1,000-row sample of the cleaned data (the full file is about 45 MB) |
 
-**Tools:** Python · pandas · NumPy · Jupyter
+**Tools:** Python · pandas · NumPy · Jupyter (statistical tests implemented from scratch in NumPy)
 
