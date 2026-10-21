@@ -32,7 +32,7 @@ An end-to-end analysis of a pricing experiment across **316,800 user sessions** 
 | File | Contents |
 |---|---|
 | `pricing_ab_test_analysis_notebook.ipynb` | Full analysis code |
-| `pricing_ab_test_report.md` / `.pdf` | Written report |
+| `pricing_ab_test_report.md` | Written report |
 | `summary_metrics.csv`, `balance_tests.csv` | Core results and randomization checks |
 | `*_segments.csv`, `*_distribution_gaps.csv` | Segment results by source, device, OS, city and week |
 | `cleaned_pricing_ab_data_sample_1000.csv` | 1,000-row sample of the cleaned data (the full file is about 45 MB) |
