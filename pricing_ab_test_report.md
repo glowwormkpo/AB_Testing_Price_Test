@@ -6,17 +6,6 @@ The $59 test price reduced conversion but increased revenue per visitor. Control
 
 Recommendation: do not ship solely on the raw result. The revenue lift is statistically strong and remains similar after post-stratifying by source, device, OS, and geo-match status, but the experiment shows randomization imbalance, especially by city among matched users. Treat $59 as promising, then rerun with stratified randomization or run an adjusted holdout before broad rollout.
 
-## Practice question answers from the PDF
-
-- An A/B test compares a control version against a treatment version with random user assignment.
-- The usual workflow is: define hypothesis, choose success metric, calculate sample size, randomize, run, analyze, then deploy or reject.
-- A winning test needs p < 0.05 and a positive test-minus-control effect for the preselected primary metric.
-- Sample size depends on alpha, power, baseline metric, and minimum detectable effect. Smaller effects require much larger samples.
-- Randomization should be checked by comparing covariate distributions or training a model to predict treatment assignment.
-- Novelty effect is a short-term lift caused by curiosity. The recommended check is splitting new users from returning users.
-- Multiple comparisons require a stricter threshold, such as Bonferroni alpha divided by number of tests.
-- Hypotheses, metrics, sample size, and stopping rules should be defined before seeing results.
-
 ## Data cleaning
 
 - Raw experiment rows: 316,800
@@ -51,7 +40,7 @@ The source, device, and OS gaps are small in magnitude but statistically signifi
 
 ## Linux sensitivity check
 
-The official solution flags Linux as anomalous because Linux users in the test group have 0% conversion. Linux is 1.31% of the cleaned data. Removing Linux increases the estimated revenue lift: control revenue per visitor becomes $0.778 and test revenue per visitor becomes $0.934, a lift of $0.156 with t-statistic 6.184 and p-value 6.24e-10.
+Linux is anomalous: Linux users in the test group have 0% conversion. Linux is 1.31% of the cleaned data. Removing Linux increases the estimated revenue lift: control revenue per visitor becomes $0.778 and test revenue per visitor becomes $0.934, a lift of $0.156 with t-statistic 6.184 and p-value 6.24e-10.
 
 | sample           | control_n | test_n | control_conversion | test_conversion | control_revenue_per_user | test_revenue_per_user | revenue_lift | t_statistic | p_value     |
 | ---------------- | --------- | ------ | ------------------ | --------------- | ------------------------ | --------------------- | ------------ | ----------- | ----------- |
@@ -64,7 +53,7 @@ The available files do not include a new-vs-returning user flag, so the PDF's re
 
 ## Bonus stopping-time calculation
 
-Mirroring the official solution, using alpha 0.05, power 0.80, and the detectable conversion drop implied by moving from $39 to $59, the required sample size is about 5,548 users per group. Average traffic is about 24356 users per week, so a two-week test would need about 11% of traffic in the test group. The practical recommendation is still to run for at least two weeks to capture weekly patterns.
+Using alpha 0.05, power 0.80…, and the detectable conversion drop implied by moving from $39 to $59, the required sample size is about 5,548 users per group. Average traffic is about 24356 users per week, so a two-week test would need about 11% of traffic in the test group. The practical recommendation is still to run for at least two weeks to capture weekly patterns.
 
 | alpha | power | raw_control_conversion | target_conversion | required_sample_per_group | avg_users_per_week | min_test_traffic_percent_for_two_weeks | recommended_min_runtime_weeks |
 | ----- | ----- | ---------------------- | ----------------- | ------------------------- | ------------------ | -------------------------------------- | ----------------------------- |
