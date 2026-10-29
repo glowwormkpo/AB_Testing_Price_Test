@@ -2,8 +2,6 @@
 
 > Data Engineer Academy module project: analysis of a pricing A/B test ($39 vs. $59).
 
-> Data Engineer Academy module project: analysis of a pricing A/B test ($39 vs. $59).
-
 An end-to-end analysis of a pricing experiment across **316,800 user sessions** (Mar–May 2015), testing whether a higher price increases revenue enough to offset lost conversions.
 
 ## Result
